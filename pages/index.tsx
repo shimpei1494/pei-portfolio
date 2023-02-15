@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Hello Peishim's Portfolio</h1>
+        <h1>Hello Peishim Portfolio</h1>
       </main>
     </>
   )
