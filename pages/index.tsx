@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <main>
         <h1>Hello Peishim Portfolio</h1>
-        <Image src="/images/top-snowboard.jpg" fill alt="Topページのスノーボード画像" />
+        <Image src="/images/top-snowboard.jpg" fill object-fit="contain" alt="Topページのスノーボード画像" />
       </main>
     </>
   )
