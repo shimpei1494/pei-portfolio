@@ -14,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <Header />
         {/* 画像はスマホサイズでいい感じに表示されないようであれば、非表示にする */}
         <img src="/images/top-snowboard2.jpg" width="100%" alt="Topページのスノーボード画像" />
       </main>
