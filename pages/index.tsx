@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
+import Header from '../components/Header'
 
 export default function Home() {
   return (
@@ -13,8 +14,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Hello Peishim Portfolio</h1>
-        <Image src="/images/top-snowboard.jpg" fill object-fit="contain" alt="Topページのスノーボード画像" />
+        {/* 画像はスマホサイズでいい感じに表示されないようであれば、非表示にする */}
+        <img src="/images/top-snowboard2.jpg" width="100%" alt="Topページのスノーボード画像" />
       </main>
     </>
   )
