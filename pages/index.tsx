@@ -1,3 +1,4 @@
+import { Container } from '@mui/system'
 import Header from '../components/Header'
 import { HeadTag } from '../components/HeadTag'
 
@@ -9,6 +10,9 @@ export default function Home() {
         <Header />
         {/* 画像はスマホサイズでいい感じに表示されないようであれば、非表示にする */}
         <img src="/images/top-snowboard3.jpeg" width="100%" alt="Topページのスノーボード画像" />
+        <Container>
+          <h2>hello</h2>
+        </Container>
       </main>
     </>
   )
