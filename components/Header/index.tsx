@@ -13,6 +13,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { createTheme, ThemeProvider } from '@mui/material';
+import { cyan, indigo, purple } from '@mui/material/colors';
 
 interface Props {
   /**
@@ -21,6 +23,17 @@ interface Props {
    */
   window?: () => Window;
 }
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: indigo[800],
+    },
+    secondary: {
+      main: cyan[700],
+    },
+  },
+});
 
 const drawerWidth = 240;
 const navItems = ['Profile', 'Works', 'Blog', 'Hobby','Contact'];
@@ -56,7 +69,8 @@ export default function Header(props: Props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" color='secondary'>
+      <ThemeProvider theme={theme}>
+      <AppBar component="nav" color='primary'>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -83,6 +97,7 @@ export default function Header(props: Props) {
           </Box>
         </Toolbar>
       </AppBar>
+      </ThemeProvider>
       <Box component="nav">
         <Drawer
           container={container}
