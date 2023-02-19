@@ -15,6 +15,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { cyan, indigo, purple } from '@mui/material/colors';
+import NextLink from 'next/link';
 
 interface Props {
   /**
@@ -36,7 +37,7 @@ const theme = createTheme({
 });
 
 const drawerWidth = 240;
-const navItems = ['Profile', 'Works', 'Blog', 'Hobby','Contact'];
+const navItems = [{word: 'Profile', link: '/profile'}, {word: 'Works', link: '/works'}, {word: 'Blog', link: '/blog'}, {word: 'Hobby', link: 'hobby'},{word: 'Contact', link: '/contact'}];
 
 export default function Header(props: Props) {
   const { window } = props;
@@ -48,16 +49,20 @@ export default function Header(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Peishim Portfolio
-      </Typography>
+      <NextLink href='/'>
+        <Typography variant="h6" sx={{ my: 2 }}>
+          Peishim Portfolio
+        </Typography>
+      </NextLink>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+          <ListItem key={item.word} disablePadding>
+            <NextLink href={item.link}>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemText primary={item.word} />
+              </ListItemButton>
+            </NextLink>
           </ListItem>
         ))}
       </List>
@@ -86,13 +91,17 @@ export default function Header(props: Props) {
               component="div"
               sx={{ flexGrow: 1, display: 'block'}}
             >
-              Peishim Portfolio
+              <NextLink href='/'>
+                Peishim Portfolio
+              </NextLink>
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
-                <Button key={item} sx={{ color: '#fff' }}>
-                  {item}
-                </Button>
+                  <Button key={item.word} sx={{ color: '#fff' }}>
+                    <NextLink href={item.link}>
+                      {item.word}
+                    </NextLink>
+                  </Button>
               ))}
             </Box>
           </Toolbar>
