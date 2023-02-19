@@ -7,7 +7,7 @@ function Works() {
     <HeadTag />
     <main>
       <Header />
-      <h2>プロフィール用のページです</h2>
+      <h2>works</h2>
     </main>
     </>
   )
