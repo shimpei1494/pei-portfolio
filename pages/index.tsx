@@ -38,10 +38,31 @@ export default function Home() {
                 </Box>
               </Stack>
             </Box>
-            <Box>ブログの紹介</Box>
-            <Box>アプリ紹介</Box>
-            <Box>趣味</Box>
-            <Box>問い合わせ</Box>
+            <Box>
+            <Typography variant="h4" mb={4}>
+              Tech Blog
+            </Typography>
+
+              ブログの紹介
+            </Box>
+            <Box>
+              <Typography variant="h4" mb={4}>
+                Create Works
+              </Typography>
+              アプリ紹介
+            </Box>
+            <Box>
+              <Typography variant="h4" mb={4}>
+                Hobby
+              </Typography>
+              趣味
+            </Box>
+            <Box>
+              <Typography variant="h4" mb={4}>
+                Contact
+              </Typography>
+              問い合わせ
+            </Box>
           </Stack>
         </Container>
       </main>
