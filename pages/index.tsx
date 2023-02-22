@@ -1,9 +1,10 @@
-import { GitHub, ReadMore } from '@mui/icons-material'
-import { Avatar, Divider, Fab, Typography } from '@mui/material'
+import { GitHub } from '@mui/icons-material'
+import { Avatar, Divider, Link, Typography } from '@mui/material'
 import { Box, Container, Stack } from '@mui/system'
 import NextLink from 'next/link'
 import Header from '../components/layouts/Header'
 import { HeadTag } from '../components/layouts/HeadTag'
+import { MoreButton } from '../components/MoreButton'
 
 export default function Home() {
   return (
@@ -31,12 +32,7 @@ export default function Home() {
                 <Typography variant="h4">
                   Profile
                 </Typography>
-                <NextLink href='/profile'>
-                  <Fab variant="extended" size="small" color="secondary">
-                    <ReadMore sx={{ mr: 1 }}/>
-                    MORE
-                  </Fab>
-                </NextLink>
+                <MoreButton url='/profile'/>
               </Stack>
               <Stack direction="row" spacing={6}>
                 <Box>
