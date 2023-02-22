@@ -70,10 +70,22 @@ export default function Home() {
             </Box>
             {/* ブログ紹介部分 */}
             <Box>
-              <Typography variant="h4" mb={4}>
-                Tech Blog
-              </Typography>
-              ブログの紹介
+              <Stack spacing={2}>
+                <Stack direction="row" alignItems='center' spacing={4} mb={2}>
+                  <Typography variant="h4">
+                    Tech Blog
+                  </Typography>
+                  <MoreButton url='/blog'/>
+                </Stack>
+                <img src='/images/zenn-logo.png' alt='zennのロゴ' width='50%' />
+                <Typography>
+                  2023年1月から週1ペースでZennの技術ブログを書き、アウトプットしています。<br/>
+                  <Link href='https://zenn.dev/peishim' target="_blank" rel="noopener noreferrer">Zennの個人ページ</Link><br/>
+                  <br/>
+                  このサイトでは、私の記事をわかりやすくまとめる機能を持っています。<br/>
+                  具体的にはおすすめ記事のピックアップ、使用技術ごとに記事を抽出することができます。
+                </Typography>
+              </Stack>
             </Box>
             {/* Works紹介部分 */}
             <Box>
