@@ -24,17 +24,6 @@ interface Props {
   window?: () => Window;
 }
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: indigo[800],
-    },
-    secondary: {
-      main: cyan[700],
-    },
-  },
-});
-
 const drawerWidth = 240;
 const navItems = [{word: 'Profile', link: '/profile'}, {word: 'Works', link: '/works'}, {word: 'Blog', link: '/blog'}, {word: 'Hobby', link: 'hobby'},{word: 'Contact', link: '/contact'}];
 
@@ -72,40 +61,38 @@ export default function Header(props: Props) {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <ThemeProvider theme={theme}>
-        <AppBar component="nav" color='primary'>
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: 'none' } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, display: 'block'}}
-            >
-              <NextLink href='/'>
-                Peishim Portfolio
-              </NextLink>
-            </Typography>
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              {navItems.map((item) => (
-                  <Button key={item.word} sx={{ color: '#fff' }}>
-                    <NextLink href={item.link}>
-                      {item.word}
-                    </NextLink>
-                  </Button>
-              ))}
-            </Box>
-          </Toolbar>
-        </AppBar>
-      </ThemeProvider>
-      {/* ↓ページコンテンツが最初にappbar分下に行って被らなくなる */}
+      <AppBar component="nav" color='primary'>
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: 'block'}}
+          >
+            <NextLink href='/'>
+              Peishim Portfolio
+            </NextLink>
+          </Typography>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            {navItems.map((item) => (
+                <Button key={item.word} sx={{ color: '#fff' }}>
+                  <NextLink href={item.link}>
+                    {item.word}
+                  </NextLink>
+                </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
+      {/* ↓ページコンテンツをAppBar分下に移動させるためのToolbar */}
       <Toolbar />
       <Box component="nav">
         <Drawer

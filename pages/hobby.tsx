@@ -1,5 +1,5 @@
-import Header from "../components/Header"
-import { HeadTag } from "../components/HeadTag"
+import Header from "../components/layouts/Header"
+import { HeadTag } from "../components/layouts/HeadTag"
 
 function Hobby() {
   return (

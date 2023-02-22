@@ -2,8 +2,8 @@ import { GitHub, ReadMore } from '@mui/icons-material'
 import { Avatar, Divider, Fab, Typography } from '@mui/material'
 import { Box, Container, Stack } from '@mui/system'
 import NextLink from 'next/link'
-import Header from '../components/Header'
-import { HeadTag } from '../components/HeadTag'
+import Header from '../components/layouts/Header'
+import { HeadTag } from '../components/layouts/HeadTag'
 
 export default function Home() {
   return (
