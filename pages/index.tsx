@@ -1,5 +1,7 @@
+import { GitHub } from '@mui/icons-material'
 import { Avatar, Divider, Typography } from '@mui/material'
 import { Box, Container, Stack } from '@mui/system'
+import NextLink from 'next/link'
 import Header from '../components/Header'
 import { HeadTag } from '../components/HeadTag'
 
@@ -29,10 +31,15 @@ export default function Home() {
               <Stack direction="row" spacing={6}>
                 <Box>
                   <Avatar alt="peishim_avatar" src="/images/profile/profile_avatar.jpg" sx={{ width: 180, height: 180 }} />
-                  <Typography variant='subtitle1' align='center' mt={2}> Peishim </Typography>
+                  <Stack direction="row" justifyContent="center" spacing={2} mt={2}>
+                    <Typography variant='subtitle1'> Peishim </Typography>
+                    <NextLink href='https://github.com/shimpei1494' target="_blank" rel="noopener noreferrer">
+                      <GitHub sx={{ color: '#4b0082' }}/>
+                    </NextLink>
+                  </Stack>
                 </Box>
                 <Box>
-                  <Box sx={{backgroundColor: '#283593', opacity: 0.8,}} mb={2}>
+                  <Box sx={{backgroundColor: '#283593', opacity: 0.8,}} mb={1} py={1}>
                     <Typography color={'white'}>
                       自己紹介
                     </Typography>
@@ -42,7 +49,7 @@ export default function Home() {
                     プログラミングスクールを経て2022年9月からWebエンジニアに転職。<br/>
                     プログラミングを通して、いろんなことに挑戦したいスノボ好きのエンジニアです。
                   </Typography>
-                  <Box sx={{backgroundColor: '#283593', opacity: 0.8,}} my={2}>
+                  <Box sx={{backgroundColor: '#283593', opacity: 0.8,}} my={1} py={1}>
                     <Typography color={'white'}>
                       主なスキル
                     </Typography>
