@@ -47,7 +47,7 @@ export default function Home() {
                   </Stack>
                 </Box>
                 <Box>
-                  <Box sx={{backgroundColor: '#283593', opacity: 0.8,}} mb={1} py={1}>
+                  <Box sx={{backgroundColor: 'primary.main', opacity: 0.8,}} mb={1} pl={1} py={1}>
                     <Typography color={'white'}>
                       自己紹介
                     </Typography>
@@ -57,7 +57,7 @@ export default function Home() {
                     プログラミングスクールを経て2022年9月からWebエンジニアに転職。<br/>
                     プログラミングを通して、いろんなことに挑戦したいスノボ好きのエンジニアです。
                   </Typography>
-                  <Box sx={{backgroundColor: '#283593', opacity: 0.8,}} my={1} py={1}>
+                  <Box sx={{backgroundColor: 'primary.main', opacity: 0.8,}} my={1} pl={1} py={1}>
                     <Typography color={'white'}>
                       主なスキル
                     </Typography>
