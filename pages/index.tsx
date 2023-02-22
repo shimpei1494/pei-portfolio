@@ -32,9 +32,26 @@ export default function Home() {
                   <Typography variant='subtitle1' align='center' mt={2}> Peishim </Typography>
                 </Box>
                 <Box>
-                  東北大学大学院を工学部（材料系）で修了後、大手鉄道会社に就職。<br/>
-                  プログラミングスクールを経て2022年9月からWebエンジニアに転職。<br/>
-                  プログラミングを通して、いろんなことに挑戦したいスノボ好きのエンジニアです。
+                  <Box sx={{backgroundColor: '#283593', opacity: 0.8,}} mb={2}>
+                    <Typography color={'white'}>
+                      自己紹介
+                    </Typography>
+                  </Box>
+                  <Typography>
+                    東北大学大学院を工学部（材料系）で修了後、大手鉄道会社に就職。<br/>
+                    プログラミングスクールを経て2022年9月からWebエンジニアに転職。<br/>
+                    プログラミングを通して、いろんなことに挑戦したいスノボ好きのエンジニアです。
+                  </Typography>
+                  <Box sx={{backgroundColor: '#283593', opacity: 0.8,}} my={2}>
+                    <Typography color={'white'}>
+                      主なスキル
+                    </Typography>
+                  </Box>
+                  <Typography>
+                    フロント：Next.js, JS, TS<br/>
+                    バック：Rails<br/>
+                    インフラ：Docker, AWS(EC2,S3等), Vercel
+                  </Typography>
                 </Box>
               </Stack>
             </Box>
