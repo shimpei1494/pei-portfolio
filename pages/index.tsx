@@ -30,8 +30,8 @@ export default function Home() {
                   Profile
                 </Typography>
                 <NextLink href='/profile'>
-                  <Fab variant="extended" size="small" color="primary">
-                    <ReadMore/>
+                  <Fab variant="extended" size="small" color="secondary">
+                    <ReadMore sx={{ mr: 1 }}/>
                     MORE
                   </Fab>
                 </NextLink>
