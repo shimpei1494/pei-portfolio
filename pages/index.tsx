@@ -1,5 +1,5 @@
-import { GitHub } from '@mui/icons-material'
-import { Avatar, Divider, Typography } from '@mui/material'
+import { GitHub, ReadMore } from '@mui/icons-material'
+import { Avatar, Divider, Fab, Typography } from '@mui/material'
 import { Box, Container, Stack } from '@mui/system'
 import NextLink from 'next/link'
 import Header from '../components/Header'
@@ -25,9 +25,17 @@ export default function Home() {
               </Typography>
             </Box>
             <Box>
-              <Typography variant="h4" mb={4}>
-                Profile
-              </Typography>
+              <Stack direction="row" alignItems='center' spacing={4} mb={4}>
+                <Typography variant="h4">
+                  Profile
+                </Typography>
+                <NextLink href='/profile'>
+                  <Fab variant="extended" size="small" color="primary">
+                    <ReadMore/>
+                    MORE
+                  </Fab>
+                </NextLink>
+              </Stack>
               <Stack direction="row" spacing={6}>
                 <Box>
                   <Avatar alt="peishim_avatar" src="/images/profile/profile_avatar.jpg" sx={{ width: 180, height: 180 }} />
