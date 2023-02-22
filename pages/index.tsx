@@ -15,6 +15,7 @@ export default function Home() {
         <img src="/images/top-snowboard3.jpeg" width="100%" alt="Topページのスノーボード画像" />
         <Container maxWidth='md'>
           <Stack divider={<Divider orientation="horizontal"/>} spacing={6} mt={4}>
+            {/* サイト紹介部分 */}
             <Box>
               <Typography variant="h4">
                 About this site
@@ -24,6 +25,7 @@ export default function Home() {
                 プロフィール、作成したアプリ、ブログ等を紹介しています。
               </Typography>
             </Box>
+            {/* profile部分 */}
             <Box>
               <Stack direction="row" alignItems='center' spacing={4} mb={4}>
                 <Typography variant="h4">
@@ -70,25 +72,28 @@ export default function Home() {
                 </Box>
               </Stack>
             </Box>
+            {/* ブログ紹介部分 */}
             <Box>
-            <Typography variant="h4" mb={4}>
-              Tech Blog
-            </Typography>
-
+              <Typography variant="h4" mb={4}>
+                Tech Blog
+              </Typography>
               ブログの紹介
             </Box>
+            {/* Works紹介部分 */}
             <Box>
               <Typography variant="h4" mb={4}>
                 Create Works
               </Typography>
               アプリ紹介
             </Box>
+            {/* 趣味紹介部分 */}
             <Box>
               <Typography variant="h4" mb={4}>
                 Hobby
               </Typography>
               趣味
             </Box>
+            {/* Contact部分 */}
             <Box>
               <Typography variant="h4" mb={4}>
                 Contact
