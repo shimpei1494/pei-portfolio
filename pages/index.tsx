@@ -1,6 +1,7 @@
 import { GitHub } from '@mui/icons-material'
 import { Box, Container, Stack, Avatar, Card, CardActionArea, CardContent, CardMedia, Divider, Link, Typography } from '@mui/material'
 import NextLink from 'next/link'
+import { Footer } from '../components/layouts/Footer'
 import Header from '../components/layouts/Header'
 import { HeadTag } from '../components/layouts/HeadTag'
 import { MoreButton } from '../components/MoreButton'
@@ -149,6 +150,7 @@ export default function Home() {
             </Box>
           </Stack>
         </Container>
+        <Footer />
       </main>
     </>
   )
