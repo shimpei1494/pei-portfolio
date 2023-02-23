@@ -1,5 +1,5 @@
 import { GitHub } from '@mui/icons-material'
-import { Avatar, Divider, Link, Typography } from '@mui/material'
+import { Avatar, Card, CardActionArea, CardContent, CardMedia, Divider, Link, Typography } from '@mui/material'
 import { Box, Container, Stack } from '@mui/system'
 import NextLink from 'next/link'
 import Header from '../components/layouts/Header'
@@ -77,7 +77,9 @@ export default function Home() {
                   </Typography>
                   <MoreButton url='/blog'/>
                 </Stack>
-                <img src='/images/zenn-logo.png' alt='zennのロゴ' width='50%' />
+                <Container>
+                  <img src='/images/zenn-logo.png' alt='zennのロゴ' width='50%' />
+                </Container>
                 <Typography>
                   2023年1月から週1ペースでZennの技術ブログを書き、アウトプットしています。<br/>
                   <Link href='https://zenn.dev/peishim' target="_blank" rel="noopener noreferrer">Zennの個人ページ</Link><br/>
@@ -89,10 +91,36 @@ export default function Home() {
             </Box>
             {/* Works紹介部分 */}
             <Box>
-              <Typography variant="h4" mb={4}>
-                Create Works
+              <Stack direction="row" alignItems='center' spacing={4} mb={4}>
+                <Typography variant="h4">
+                  Works
+                </Typography>
+                <MoreButton url='/works'/>
+              </Stack>
+              <Typography mb={2}>
+                自分が作った公開中のアプリをまとめています。<br/>
+                個人開発なので、できるだけ費用はかからないように心がけています。
               </Typography>
-              アプリ紹介
+              <NextLink href='https://anime-list-search-nine.vercel.app/' target="_blank" rel="noopener noreferrer">
+                <Card variant='outlined' sx={{ maxWidth: 500}}>
+                  <CardActionArea>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        最新のアプリ
+                      </Typography>
+                      <Typography variant="body2">
+                        アニメのリストをクールごとに表示することができます。
+                      </Typography>
+                    </CardContent>
+                    <CardMedia
+                      component="img"
+                      height="300"
+                      image="/images/works/anime-list.png"
+                      alt="アニメリスト検索アプリ"
+                    />
+                  </CardActionArea>
+                </Card>
+              </NextLink>
             </Box>
             {/* 趣味紹介部分 */}
             <Box>
