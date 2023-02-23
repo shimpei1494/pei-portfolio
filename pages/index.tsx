@@ -124,17 +124,29 @@ export default function Home() {
             </Box>
             {/* 趣味紹介部分 */}
             <Box>
-              <Typography variant="h4" mb={4}>
-                Hobby
+              <Stack direction="row" alignItems='center' spacing={4} mb={2}>
+                <Typography variant="h4">
+                  Hobby
+                </Typography>
+                <MoreButton url='/hobby'/>
+              </Stack>
+              <Typography>
+                プログラミングとは関係のないただの趣味を気まぐれで紹介します。<br/>
+                興味のある人のみゆる〜く見てください。
               </Typography>
-              趣味
             </Box>
             {/* Contact部分 */}
             <Box>
-              <Typography variant="h4" mb={4}>
-                Contact
+              <Stack direction="row" alignItems='center' spacing={4} mb={2}>
+                <Typography variant="h4">
+                  Contact
+                </Typography>
+                <MoreButton url='/contact'/>
+              </Stack>
+              <Typography>
+                このサイトや私「peishim」に何か伝えたいことがあれば、<br/>
+                お問い合わせフォームよりご連絡できます。
               </Typography>
-              問い合わせ
             </Box>
           </Stack>
         </Container>
