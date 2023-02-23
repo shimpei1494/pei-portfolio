@@ -15,10 +15,10 @@ export default function Home() {
         {/* 画像はスマホサイズでいい感じに表示されないようであれば、非表示にする */}
         <img src="/images/top-snowboard3.jpeg" width="100%" alt="Topページのスノーボード画像" />
         <Container maxWidth='md'>
-          <Stack divider={<Divider orientation="horizontal"/>} spacing={6} mt={4}>
+          <Stack divider={<Divider orientation="horizontal"/>} spacing={10} mt={6}>
             {/* サイト紹介部分 */}
             <Box>
-              <Typography variant="h4">
+              <Typography variant="h4" mb={4}>
                 About this site
               </Typography>
               <Typography variant='subtitle1'>
@@ -134,7 +134,7 @@ export default function Home() {
               </Stack>
               <Typography>
                 プログラミングとは関係のないただの趣味を気まぐれで紹介します。<br/>
-                興味のある人のみゆる〜く見てください。
+                興味のある人のみ、ゆる〜く見てください。
               </Typography>
             </Box>
             {/* Contact部分 */}
@@ -146,7 +146,7 @@ export default function Home() {
                 <MoreButton url='/contact'/>
               </Stack>
               <Typography>
-                このサイトや私「peishim」に何か伝えたいことがあれば、<br/>
+                このサイトに関することや私「peishim」に何か伝えたいことがあれば、<br/>
                 お問い合わせフォームよりご連絡できます。
               </Typography>
             </Box>
