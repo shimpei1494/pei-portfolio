@@ -34,9 +34,11 @@ export default function Home() {
                 </Typography>
                 <MoreButton url='/profile'/>
               </Stack>
-              <Stack direction="row" spacing={6}>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={6}>
                 <Box>
-                  <Avatar alt="peishim_avatar" src="/images/profile/profile_avatar.jpg" sx={{ width: 180, height: 180 }} />
+                  <Stack alignItems='center'>
+                    <Avatar alt="peishim_avatar" src="/images/profile/profile_avatar.jpg" sx={{ width: 180, height: 180 }} />
+                  </Stack>
                   <Stack direction="row" justifyContent="center" spacing={2} mt={2}>
                     <Typography variant='subtitle1'> Peishim </Typography>
                     <NextLink href='https://github.com/shimpei1494' target="_blank" rel="noopener noreferrer">
