@@ -1,6 +1,5 @@
 import { GitHub } from '@mui/icons-material'
-import { Avatar, Card, CardActionArea, CardContent, CardMedia, Divider, Link, Typography } from '@mui/material'
-import { Box, Container, Stack } from '@mui/system'
+import { Box, Container, Stack, Avatar, Card, CardActionArea, CardContent, CardMedia, Divider, Link, Typography } from '@mui/material'
 import NextLink from 'next/link'
 import Header from '../components/layouts/Header'
 import { HeadTag } from '../components/layouts/HeadTag'
