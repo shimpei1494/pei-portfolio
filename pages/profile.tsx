@@ -1,11 +1,17 @@
 
 import { GitHub } from "@mui/icons-material"
-import { Avatar, Box, Chip, Container, Stack, Typography } from "@mui/material"
+import { Avatar, Box, Chip, Container, Divider, Stack, Typography } from "@mui/material"
 import NextLink from "next/link"
-import { useState } from "react"
 import { Footer } from "../components/layouts/Footer"
 import Header from "../components/layouts/Header"
 import { HeadTag } from "../components/layouts/HeadTag"
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+import { TimelineOppositeContent } from "@mui/lab"
 
 function Profile() {
   return (
@@ -23,6 +29,7 @@ function Profile() {
             </Typography>
           </Box>
           <Stack spacing={6}>
+            {/* アバター写真 */}
             <Box>
               <Stack alignItems='center'>
                 <Avatar alt="peishim_avatar" src="/images/profile/profile_avatar.jpg" sx={{ width: 300, height: 300 }} />
@@ -34,6 +41,7 @@ function Profile() {
                 </NextLink>
               </Stack>
             </Box>
+            {/* 自己紹介文 */}
             <Box>
               <Box sx={{backgroundColor: 'primary.main', opacity: 0.8,}} mb={1} pl={1} py={1}>
                 <Typography color={'white'}>
@@ -79,6 +87,67 @@ function Profile() {
                 <Chip label="Route53" variant="outlined" color="secondary" />
                 <Chip label="Vercel" color="secondary" />
               </Stack>
+            </Box>
+            <Divider />
+            {/* キャリア紹介 */}
+            <Box>
+              <Typography variant="h2" align='center' sx={{textDecoration: 'underline'}}>
+                Career
+              </Typography>
+              <Typography color='secondary' align="center" my={2}>
+                ※エンジニアとしてのキャリアは色付きドット
+              </Typography>
+              <Timeline>
+                <TimelineItem>
+                  <TimelineOppositeContent color="text.secondary">
+                    生誕〜2013年
+                  </TimelineOppositeContent>
+                  <TimelineSeparator>
+                    <TimelineDot />
+                    <TimelineConnector />
+                  </TimelineSeparator>
+                  <TimelineContent>石川県で高校生まで生活。</TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                  <TimelineOppositeContent color="text.secondary">
+                    2013年〜2019年
+                  </TimelineOppositeContent>
+                  <TimelineSeparator>
+                    <TimelineDot />
+                    <TimelineConnector />
+                  </TimelineSeparator>
+                  <TimelineContent>東北大学で大学院修了までの６年間を仙台で過ごした。材料に関する専攻だったため、研究室では複合材料の研究などを行っていた。<br/><br/></TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                  <TimelineOppositeContent color="text.secondary">
+                    この先社会人
+                  </TimelineOppositeContent>
+                  <TimelineSeparator>
+                    <TimelineDot />
+                    <TimelineConnector />
+                  </TimelineSeparator>
+                  <TimelineContent></TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                  <TimelineOppositeContent color="text.secondary">
+                    2019年〜2022年
+                  </TimelineOppositeContent>
+                  <TimelineSeparator>
+                    <TimelineDot />
+                    <TimelineConnector />
+                  </TimelineSeparator>
+                  <TimelineContent>大手鉄道会社に総合職として就職した。主に車両のメンテナンス業務や車掌などを経験。Microsoft Power Appsを用いた社内アプリ開発など、様々な職場改善に積極的に取り組んだ。<br/><br/></TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                  <TimelineOppositeContent color="text.secondary">
+                    2022年9月〜現在
+                  </TimelineOppositeContent>
+                  <TimelineSeparator>
+                    <TimelineDot color="secondary" />
+                  </TimelineSeparator>
+                  <TimelineContent>BtoCサービスを提供する自社開発企業にてWebエンジニアとしてのキャリアをスタート。フロント・バック・インフラ関係なく、エンジニアとして業務に励んでいる。</TimelineContent>
+                </TimelineItem>
+              </Timeline>
             </Box>
           </Stack>
         </Container>
