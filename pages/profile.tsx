@@ -149,6 +149,12 @@ function Profile() {
                 </TimelineItem>
               </Timeline>
             </Box>
+            {/* 実務経験を一部紹介 */}
+            <Box>
+              <Typography variant="h2" align='center' sx={{textDecoration: 'underline'}}>
+                Experience
+              </Typography>
+            </Box>
           </Stack>
         </Container>
       <Footer />
