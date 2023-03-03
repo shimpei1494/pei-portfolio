@@ -58,7 +58,7 @@ function Blog({blogs,tags}: Props) {
                             {blog.title}
                           </Typography>
                           <Stack direction='row' spacing={1} mt={1}>
-                          {blog.tag.map((tag) => 
+                          {blog.tags.map((tag) => 
                             <Chip label={tag.name} variant="outlined" color="secondary" key={tag.id} size="small" />
                           )}
                           </Stack>
