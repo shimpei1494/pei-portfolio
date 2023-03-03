@@ -25,10 +25,6 @@ const schema = yup.object({
 })
 
 function Contact() {
-  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   console.log("メール送信");
-  // };
   const router = useRouter();
   const { register, handleSubmit, formState: {errors}, } = useForm<ContactForm>({
     resolver: yupResolver(schema),
