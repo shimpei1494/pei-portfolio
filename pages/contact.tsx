@@ -10,7 +10,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 type ContactForm = {
   name: string
   email: string
-  content: string
+  message: string
 };
 
 const schema = yup.object({
@@ -19,7 +19,7 @@ const schema = yup.object({
     .string()
     .required('必須項目です')
     .email('正しいメールアドレス入力してください'),
-  content: yup
+  message: yup
     .string().required('必須項目です'),
 })
 
@@ -54,7 +54,7 @@ function Contact() {
             <Stack spacing={3} direction='column' >
               <TextField variant="outlined" required label="お名前" {...register('name')} error={'name' in errors}  helperText={errors.name?.message} />
               <TextField variant="outlined" required label="メールアドレス" type="email" {...register('email')} error={'email' in errors}  helperText={errors.email?.message} />
-              <TextField variant="outlined" required label="問い合わせ内容" multiline rows={6} {...register('content')} error={'content' in errors}  helperText={errors.content?.message} />
+              <TextField variant="outlined" required label="問い合わせ内容" multiline rows={6} {...register('message')} error={'message' in errors}  helperText={errors.message?.message} />
             </Stack>
             <Stack alignItems='center' mt={3} >
               <Button color="primary" variant="contained" size="large" sx={{width: '200px'}} onClick={handleSubmit(onSubmit)}>
