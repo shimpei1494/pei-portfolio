@@ -32,49 +32,47 @@ type Props = {
 };
 
 function Blog({blogs,tags}: Props) {
-  console.log(blogs);
-  console.log(tags);
   return (
     <>
-    <HeadTag />
-    <main>
-      <Header />
-      <Container maxWidth='md'>
-        <Box mb={6}>
-          <PageTitle title="Blog." />
-          <Typography align='center'>
-            週１ペースでZennに技術ブログを書いています（<Link href="https://zenn.dev/peishim" target="_blank" rel="noopener noreferrer">Zenn個人ページ</Link> ）<br/>
-            このページでは私がどのようなブログを書いているのか検索することができます。
-          </Typography>
-          <Box mt={6}>
-            <Grid container spacing={4} >
-              {blogs.map((blog) => (
-                <Grid item xs={12} md={4}>
-                  <NextLink href={blog.url} target="_blank" rel="noopener noreferrer" key={blog.id}>
-                    <Card variant="outlined" style={{backgroundColor: "#fff8dc"}} >
-                      <CardContent>
-                        <Typography color='#a9a9a9'>
-                          {getDateStr(blog.date)}
-                        </Typography>
-                        <Typography>
-                          {blog.title}
-                        </Typography>
-                        <Stack direction='row' spacing={1} mt={1}>
-                        {blog.tag.map((tag) => 
-                          <Chip label={tag.name} variant="outlined" color="secondary" key={tag.id} size="small" />
-                        )}
-                        </Stack>
-                      </CardContent>
-                    </Card>
-                  </NextLink>
-                </Grid>
-              ))}
-            </Grid>
+      <HeadTag />
+      <main>
+        <Header />
+        <Container maxWidth='md'>
+          <Box mb={6}>
+            <PageTitle title="Blog." />
+            <Typography align='center'>
+              週１ペースでZennに技術ブログを書いています（<Link href="https://zenn.dev/peishim" target="_blank" rel="noopener noreferrer">Zenn個人ページ</Link> ）<br/>
+              このページでは私がどのようなブログを書いているのか検索することができます。
+            </Typography>
+            <Box mt={6}>
+              <Grid container spacing={4} >
+                {blogs.map((blog) => (
+                  <Grid item xs={12} md={4}>
+                    <NextLink href={blog.url} target="_blank" rel="noopener noreferrer" key={blog.id}>
+                      <Card variant="outlined" style={{backgroundColor: "#fff8dc"}} >
+                        <CardContent>
+                          <Typography color='#a9a9a9'>
+                            {getDateStr(blog.date)}
+                          </Typography>
+                          <Typography>
+                            {blog.title}
+                          </Typography>
+                          <Stack direction='row' spacing={1} mt={1}>
+                          {blog.tag.map((tag) => 
+                            <Chip label={tag.name} variant="outlined" color="secondary" key={tag.id} size="small" />
+                          )}
+                          </Stack>
+                        </CardContent>
+                      </Card>
+                    </NextLink>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
           </Box>
-        </Box>
-      </Container>
-      <Footer />
-    </main>
+        </Container>
+        <Footer />
+      </main>
     </>
   )
 };
