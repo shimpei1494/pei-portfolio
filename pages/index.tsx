@@ -5,6 +5,7 @@ import { Footer } from '../components/layouts/Footer'
 import Header from '../components/layouts/Header'
 import { HeadTag } from '../components/layouts/HeadTag'
 import { MoreButton } from '../components/MoreButton'
+import { TopPageSubTitle } from '../components/TopPageSubTitle'
 
 export default function Home() {
   return (
@@ -18,10 +19,8 @@ export default function Home() {
           <Stack divider={<Divider orientation="horizontal"/>} spacing={10} mt={6}>
             {/* サイト紹介部分 */}
             <Box>
-              <Typography variant="h4" mb={4}>
-                About this site
-              </Typography>
-              <Typography variant='subtitle1'>
+              <TopPageSubTitle subtitle='About this site.' />
+              <Typography variant='subtitle1' mt={4}>
                 このサイトはWebエンジニアPeishimのポートフォリオサイトです。<br/>
                 プロフィール、作成したアプリ、ブログ等を紹介しています。
               </Typography>
@@ -29,9 +28,7 @@ export default function Home() {
             {/* profile部分 */}
             <Box>
               <Stack direction="row" alignItems='center' spacing={4} mb={4}>
-                <Typography variant="h4">
-                  Profile
-                </Typography>
+                <TopPageSubTitle subtitle='Profile.' />
                 <MoreButton url='/profile'/>
               </Stack>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={6}>
@@ -74,9 +71,7 @@ export default function Home() {
             <Box>
               <Stack spacing={2}>
                 <Stack direction="row" alignItems='center' spacing={4} mb={2}>
-                  <Typography variant="h4">
-                    Tech Blog
-                  </Typography>
+                  <TopPageSubTitle subtitle='Tech Blog.' />
                   <MoreButton url='/blog'/>
                 </Stack>
                 <Container>
@@ -94,9 +89,7 @@ export default function Home() {
             {/* Works紹介部分 */}
             <Box>
               <Stack direction="row" alignItems='center' spacing={4} mb={4}>
-                <Typography variant="h4">
-                  Works
-                </Typography>
+                <TopPageSubTitle subtitle='Works.' />
                 <MoreButton url='/works'/>
               </Stack>
               <Typography mb={2}>
@@ -127,9 +120,7 @@ export default function Home() {
             {/* 趣味紹介部分 */}
             <Box>
               <Stack direction="row" alignItems='center' spacing={4} mb={2}>
-                <Typography variant="h4">
-                  Hobby
-                </Typography>
+                <TopPageSubTitle subtitle='Hobby.' />
                 <MoreButton url='/hobby'/>
               </Stack>
               <Typography>
@@ -140,9 +131,7 @@ export default function Home() {
             {/* Contact部分 */}
             <Box>
               <Stack direction="row" alignItems='center' spacing={4} mb={2}>
-                <Typography variant="h4">
-                  Contact
-                </Typography>
+                <TopPageSubTitle subtitle='Contact.' />
                 <MoreButton url='/contact'/>
               </Stack>
               <Typography>
