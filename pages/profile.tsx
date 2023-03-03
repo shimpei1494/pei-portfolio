@@ -90,9 +90,7 @@ function Profile() {
             <Divider />
             {/* キャリア紹介 */}
             <Box>
-              <Typography variant="h2" align='center' sx={{textDecoration: 'underline'}}>
-                Career
-              </Typography>
+              <PageTitle title="Career." />
               <Typography color='secondary' align="center" my={2}>
                 ※エンジニアとしてのキャリアは色付きドット
               </Typography>
@@ -150,9 +148,7 @@ function Profile() {
             </Box>
             {/* 実務経験を一部紹介 */}
             <Box>
-              <Typography variant="h2" align='center' sx={{textDecoration: 'underline'}}>
-                Experience
-              </Typography>
+              <PageTitle title="Experience." />
             </Box>
           </Stack>
         </Container>
