@@ -31,8 +31,20 @@ function Contact() {
   const { register, handleSubmit, formState: {errors}, } = useForm<ContactForm>({
     resolver: yupResolver(schema),
   });
-  const onSubmit: SubmitHandler<ContactForm> = (data) => {
-    console.log(data);
+
+  // フォーム送信時の処理（バリデーションOKな時に実行される）
+  const onSubmit: SubmitHandler<ContactForm> = async (data) => {
+    await fetch("api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      if (res.status === 200) console.log("メール送信成功");
+      // コンソール表示ではなく送信成功したら成功がわかる画面にする
+    });
   }
 
   return (
