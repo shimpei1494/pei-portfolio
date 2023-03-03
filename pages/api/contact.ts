@@ -20,10 +20,10 @@ export default function sendGmail(req: NextApiRequest, res: NextApiResponse) {
     html: `
       <p>【名前】</p>
       <p>${req.body.name}</p>
-      <p>【メッセージ内容】</p>
-      <p>${req.body.message}</p>
       <p>【メールアドレス】</p>
       <p>${req.body.email}</p>
+      <p>【メッセージ内容】</p>
+      <p>${req.body.message}</p>
       `,
   };
 
