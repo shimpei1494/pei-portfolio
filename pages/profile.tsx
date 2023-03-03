@@ -58,7 +58,7 @@ function Profile() {
                 </Typography>
               </Box>
               <Typography my={1}>
-                フロントエンド
+                ・フロントエンド
               </Typography>
               <Stack direction='row' spacing={1}>
                 <Chip label="HTML" variant="outlined" color="secondary" />
@@ -70,14 +70,14 @@ function Profile() {
                 <Chip label="JQuery" variant="outlined" color="secondary" />
               </Stack>
               <Typography my={1}>
-                バックエンド
+                ・バックエンド
               </Typography>
               <Stack direction='row' spacing={1}>
                 <Chip label="Ruby" variant="outlined" color="secondary" />
                 <Chip label="Rails" color="secondary" />
               </Stack>
               <Typography my={1}>
-                インフラ
+                ・インフラ
               </Typography>
               <Stack direction='row' spacing={1}>
                 <Chip label="Docker" color="secondary" />
