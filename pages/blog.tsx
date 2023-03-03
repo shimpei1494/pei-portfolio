@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material"
+import { Box, Container, Link, Typography } from "@mui/material"
 import { Footer } from "../components/layouts/Footer"
 import Header from "../components/layouts/Header"
 import { HeadTag } from "../components/layouts/HeadTag"
@@ -14,7 +14,8 @@ function Blog() {
         <Box mb={6}>
         <PageTitle title="Blog." />
           <Typography align='center'>
-            このページではブログを紹介。<br/>
+            週１ペースでZennに技術ブログを書いています（<Link href="https://zenn.dev/peishim" target="_blank" rel="noopener noreferrer">Zenn個人ページ</Link> ）<br/>
+            このページでは私がどのようなブログを書いているのか検索することができます。
           </Typography>
         </Box>
       </Container>
