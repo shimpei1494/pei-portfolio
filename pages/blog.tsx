@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardHeader, Chip, Container, Grid, Link, Stack, Typography } from "@mui/material"
+import { Box, Card, CardContent, CardHeader, Chip, Container, Grid, InputLabel, Link, MenuItem, Select, SelectChangeEvent, Stack, Typography } from "@mui/material"
 import { Footer } from "../components/layouts/Footer"
 import Header from "../components/layouts/Header"
 import { HeadTag } from "../components/layouts/HeadTag"
@@ -6,6 +6,7 @@ import { PageTitle } from "../components/PageTitle"
 import { client } from "../libs/client"
 import { BlogTag, PeiBlog } from "../types/blog"
 import NextLink from 'next/link';
+import { useState } from "react"
 
 // APIから取得したstringの日時を日付に変換するメソッド
 const getDateStr = (date: string) => {
@@ -31,7 +32,15 @@ type Props = {
   tags: BlogTag[];
 };
 
+
+
 function Blog({blogs,tags}: Props) {
+  // タグ選択state
+  const [selectTag, setSelectTag] = useState<string>("");
+  const handleTagSelect = (e: SelectChangeEvent<string>) => {
+    setSelectTag(e.target.value);
+  };
+
   return (
     <>
       <HeadTag />
@@ -40,10 +49,17 @@ function Blog({blogs,tags}: Props) {
         <Container maxWidth='md'>
           <Box mb={6}>
             <PageTitle title="Blog." />
+            {/* ページの説明 */}
             <Typography align='center'>
               週１ペースでZennに技術ブログを書いています（<Link href="https://zenn.dev/peishim" target="_blank" rel="noopener noreferrer">Zenn個人ページ</Link> ）<br/>
               このページでは私がどのようなブログを書いているのか検索することができます。
             </Typography>
+            {/* タグ選択 */}
+            <InputLabel id="select-tag-label">タグ名検索</InputLabel>
+            <Select labelId="select-tag-label" id="select-tag" value={selectTag} label="タグ名付検索" onChange={e => handleTagSelect(e)}>
+              {tags.map((tag) => ( <MenuItem value={tag.name} key={tag.name}>{tag.name}</MenuItem> ))}
+            </Select>
+            {/* ブログへのリンク */}
             <Box mt={6}>
               <Grid container spacing={4} >
                 {blogs.map((blog) => (
