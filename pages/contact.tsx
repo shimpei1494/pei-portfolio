@@ -6,6 +6,7 @@ import Header from "../components/layouts/Header"
 import { HeadTag } from "../components/layouts/HeadTag"
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
+import {useRouter} from "next/router";
 
 type ContactForm = {
   name: string
@@ -28,6 +29,7 @@ function Contact() {
   //   e.preventDefault();
   //   console.log("メール送信");
   // };
+  const router = useRouter();
   const { register, handleSubmit, formState: {errors}, } = useForm<ContactForm>({
     resolver: yupResolver(schema),
   });
@@ -42,8 +44,10 @@ function Contact() {
       },
       body: JSON.stringify(data),
     }).then((res) => {
-      if (res.status === 200) console.log("メール送信成功");
-      // コンソール表示ではなく送信成功したら成功がわかる画面にする
+      // 送信完了でthanksページに遷移（まだthanksページがないので仮でトップページ）
+      if (res.status === 200) {
+        router.push("/");
+      };
     });
   }
 
