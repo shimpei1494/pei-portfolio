@@ -1,7 +1,7 @@
 export type PeiBlog = {
   id: string;
   title: string;
-  tag: BlogTag[];
+  tags: BlogTag[];
   url: string;
   date: string
   image: string;
