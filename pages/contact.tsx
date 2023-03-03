@@ -7,6 +7,7 @@ import { HeadTag } from "../components/layouts/HeadTag"
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import {useRouter} from "next/router";
+import { PageTitle } from "../components/PageTitle";
 
 type ContactForm = {
   name: string
@@ -54,9 +55,7 @@ function Contact() {
       <Header />
       <Container maxWidth='md'>
         <Box mb={6}>
-          <Typography variant="h2" align='center' sx={{textDecoration: 'underline'}} mb={2}>
-            Contact
-          </Typography>
+          <PageTitle title="Contact." />
           <Typography align='center'>
             このページはお問い合わせページです。<br/>
           </Typography>

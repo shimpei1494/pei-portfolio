@@ -12,6 +12,7 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { TimelineOppositeContent } from "@mui/lab"
+import { PageTitle } from "../components/PageTitle"
 
 function Profile() {
   return (
@@ -21,9 +22,7 @@ function Profile() {
       <Header />
         <Container maxWidth='md'>
           <Box mb={6}>
-            <Typography variant="h2" align='center' sx={{textDecoration: 'underline'}} mb={2}>
-              profile
-            </Typography>
+          <PageTitle title="Profile." />
             <Typography align='center'>
               このページでは少し詳細なプロフィールを紹介します。
             </Typography>
