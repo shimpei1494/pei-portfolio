@@ -75,6 +75,7 @@ function Contact() {
             </Stack>
           </FormControl>
         </Box>
+        <Box height="20vh"></Box>
       </Container>
       <Footer />
     </main>
