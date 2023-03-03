@@ -146,10 +146,10 @@ function Profile() {
                 </TimelineItem>
               </Timeline>
             </Box>
-            {/* 実務経験を一部紹介 */}
-            <Box>
-              <PageTitle title="Experience." />
-            </Box>
+            {/* 実務経験を一部紹介 → 内容がある程度できるまではコメントアウト */}
+            {/* <Box>
+              <PageTitle title="Work experience." />
+            </Box> */}
           </Stack>
         </Container>
       <Footer />
