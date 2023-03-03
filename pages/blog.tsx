@@ -49,7 +49,7 @@ function Blog({blogs,tags}: Props) {
                 {blogs.map((blog) => (
                   <Grid item xs={12} md={4}>
                     <NextLink href={blog.url} target="_blank" rel="noopener noreferrer" key={blog.id}>
-                      <Card variant="outlined" style={{backgroundColor: "#fff8dc"}} >
+                      <Card variant="outlined" style={{backgroundColor: "#fff8dc", display: true? "block" : "none"}} >
                         <CardContent>
                           <Typography color='#a9a9a9'>
                             {getDateStr(blog.date)}
