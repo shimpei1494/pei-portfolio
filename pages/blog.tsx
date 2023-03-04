@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardHeader, Chip, Container, Grid, InputLabel, Link, MenuItem, Select, SelectChangeEvent, Stack, Typography } from "@mui/material"
+import { Box, Card, CardContent, CardHeader, Chip, Container, FormControl, Grid, InputLabel, Link, MenuItem, Select, SelectChangeEvent, Stack, Typography } from "@mui/material"
 import { Footer } from "../components/layouts/Footer"
 import Header from "../components/layouts/Header"
 import { HeadTag } from "../components/layouts/HeadTag"
@@ -55,10 +55,13 @@ function Blog({blogs,tags}: Props) {
               このページでは私がどのようなブログを書いているのか検索することができます。
             </Typography>
             {/* タグ選択 */}
-            <InputLabel id="select-tag-label">タグ名検索</InputLabel>
-            <Select labelId="select-tag-label" id="select-tag" value={selectTag} label="タグ名付検索" onChange={e => handleTagSelect(e)}>
-              {tags.map((tag) => ( <MenuItem value={tag.name} key={tag.name}>{tag.name}</MenuItem> ))}
-            </Select>
+            <FormControl variant="filled" sx={{ m: 1, minWidth: 160 }} >
+              <InputLabel id="select-tag-label">Tag</InputLabel>
+              <Select labelId="select-tag-label" id="select-tag" value={selectTag} label="Tag" onChange={e => handleTagSelect(e)}>
+                <MenuItem value="全ての記事">全ての記事</MenuItem>
+                {tags.map((tag) => ( <MenuItem value={tag.name} key={tag.name}>{tag.name}</MenuItem> ))}
+              </Select>
+            </FormControl>
             {/* ブログへのリンク */}
             <Box mt={6}>
               <Grid container spacing={4} >
