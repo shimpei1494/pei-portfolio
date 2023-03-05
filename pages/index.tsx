@@ -90,7 +90,7 @@ export default function Home() {
             <Box>
               <Stack direction="row" alignItems='center' spacing={4} mb={4}>
                 <TopPageSubTitle subtitle='Works.' />
-                <MoreButton url='/works'/>
+                {/* <MoreButton url='/works'/> */}
               </Stack>
               <Typography mb={2}>
                 自分が作った公開中のアプリをまとめています。<br/>

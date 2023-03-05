@@ -15,6 +15,7 @@ function Works() {
           <PageTitle title="Works." />
           <Typography align='center'>
             このページでは作成したアプリを紹介します。<br/>
+            作成アプリがもう少し増えたら、充実させます。
           </Typography>
         </Box>
       </Container>
