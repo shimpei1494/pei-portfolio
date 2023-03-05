@@ -1,5 +1,5 @@
 import { GitHub } from '@mui/icons-material'
-import { Box, Container, Stack, Avatar, Card, CardActionArea, CardContent, CardMedia, Divider, Link, Typography } from '@mui/material'
+import { Box, Container, Stack, Avatar, Card, CardActionArea, CardContent, CardMedia, Divider, Link, Typography, Fab } from '@mui/material'
 import NextLink from 'next/link'
 import { Footer } from '../components/layouts/Footer'
 import Header from '../components/layouts/Header'
@@ -90,6 +90,9 @@ export default function Home() {
             <Box>
               <Stack direction="row" alignItems='center' spacing={4} mb={4}>
                 <TopPageSubTitle subtitle='Works.' />
+                <Fab variant="extended" size="small" color="default">
+                  Coming soon
+                </Fab>
                 {/* <MoreButton url='/works'/> */}
               </Stack>
               <Typography mb={2}>
