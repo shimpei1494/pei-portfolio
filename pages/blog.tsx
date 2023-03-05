@@ -1,26 +1,22 @@
-import { Box, Card, CardContent, CardHeader, Chip, Container, FormControl, Grid, InputLabel, Link, MenuItem, Select, SelectChangeEvent, Stack, Typography } from "@mui/material"
+import { Box, Container, FormControl, Grid, InputLabel, Link, MenuItem, Select, SelectChangeEvent, Typography } from "@mui/material"
 import { Footer } from "../components/layouts/Footer"
 import Header from "../components/layouts/Header"
 import { HeadTag } from "../components/layouts/HeadTag"
 import { PageTitle } from "../components/PageTitle"
 import { client } from "../libs/client"
-import { BlogTag, PeiBlog } from "../types/blog"
-import NextLink from 'next/link';
+import { BlogTag, PeiBlog} from "../types/blog"
 import { useState } from "react"
-
-// APIから取得したstringの日時を日付に変換するメソッド
-const getDateStr = (date: string) => {
-  return new Date(date).toLocaleDateString();
-};
+import { BlogCard } from "../components/Blog/BlogCard"
 
 // microCMSへAPIリクエスト
 export const getStaticProps = async () => {
-  const blog = await client.get({ endpoint: "pei_blog" });
-  const tags = await client.get({ endpoint: "blog_tag" });
+  const blogs = await client.get({ endpoint: "pei_blog?limit=50" });
+  const tags = await client.get({ endpoint: "blog_tag?limit=25" });
+  blogs.contents.map((blog: PeiBlog) => blog.visible = true)
 
   return {
     props: {
-      blogs: blog.contents,
+      blogs: blogs.contents,
       tags: tags.contents,
     },
   };
@@ -32,8 +28,6 @@ type Props = {
   tags: BlogTag[];
 };
 
-
-
 function Blog({blogs,tags}: Props) {
   // タグ選択state
   const ALLARTICLE: string = "全ての記事" 
@@ -42,6 +36,7 @@ function Blog({blogs,tags}: Props) {
     setSelectTag(e.target.value);
   };
 
+  // 表示内容
   return (
     <>
       <HeadTag />
@@ -53,7 +48,7 @@ function Blog({blogs,tags}: Props) {
             {/* ページの説明 */}
             <Typography align='center'>
               週１ペースでZennに技術ブログを書いています（<Link href="https://zenn.dev/peishim" target="_blank" rel="noopener noreferrer">Zenn個人ページ</Link> ）<br/>
-              このページでは私がどのようなブログを書いているのか検索することができます。
+              このページでは私が書いたブログをタグ検索することができます。
             </Typography>
             {/* タグ選択 */}
             <Box my={2} sx={{ display: 'flex', justifyContent: 'center'}} >
@@ -69,25 +64,8 @@ function Blog({blogs,tags}: Props) {
             <Box mt={6}>
               <Grid container spacing={4} >
                 {blogs.map((blog) => (
-                  <Grid item xs={12} md={4} key={blog.id}>
-                    <NextLink href={blog.url} target="_blank" rel="noopener noreferrer">
-                      <Card variant="outlined" style={{backgroundColor: "#fff8dc", display: true? "block" : "none"}} >
-                        <CardContent>
-                          <Typography color='#a9a9a9'>
-                            {getDateStr(blog.date)}
-                          </Typography>
-                          <Typography>
-                            {blog.title}
-                          </Typography>
-                          <Stack direction='row' spacing={1} mt={1}>
-                          {blog.tags.map((tag) => 
-                            <Chip label={tag.name} variant="outlined" color="secondary" key={tag.id} size="small" />
-                          )}
-                          </Stack>
-                        </CardContent>
-                      </Card>
-                    </NextLink>
-                  </Grid>
+                  // selectTagによって表示・非表示が切り替わる
+                  <BlogCard blog={blog} selectTag={selectTag} key={blog.id} />
                 ))}
               </Grid>
             </Box>
