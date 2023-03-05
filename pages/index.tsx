@@ -82,8 +82,7 @@ export default function Home() {
                   2023年1月から週1ペースでZennの技術ブログを書き、アウトプットしています。<br/>
                   <Link href='https://zenn.dev/peishim' target="_blank" rel="noopener noreferrer">Zennの個人ページ</Link><br/>
                   <br/>
-                  このサイトでは、私の記事をわかりやすくまとめる機能を持っています。<br/>
-                  具体的にはおすすめ記事のピックアップ、使用技術ごとに記事を抽出することができます。
+                  このサイトでは、タグ検索機能を提供しており、私の記事を項目別で見つけやすくなっています。<br/>
                 </Typography>
               </Stack>
             </Box>
