@@ -9,6 +9,7 @@ export type PeiBlog = {
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
+  visible: boolean
 };
 
 export type BlogTag = {
