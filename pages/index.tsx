@@ -22,7 +22,8 @@ export default function Home() {
               <TopPageSubTitle subtitle='About this site.' />
               <Typography variant='subtitle1' mt={4}>
                 このサイトはWebエンジニアPeishimのポートフォリオサイトです。<br/>
-                プロフィール、作成したアプリ、ブログ等を紹介しています。
+                プロフィール、作成したアプリ、ブログ等を紹介しています。<br/>
+                まだ未完成の部分もあるので、少しずつこのサイトもグレードアップさせていきたいです！
               </Typography>
             </Box>
             {/* profile部分 */}
