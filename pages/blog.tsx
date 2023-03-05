@@ -36,7 +36,6 @@ type Props = {
 
 function Blog({blogs,tags}: Props) {
   // タグ選択state
-  const [selectTag, setSelectTag] = useState<string>("");
   const ALLARTICLE: string = "全ての記事" 
   const [selectTag, setSelectTag] = useState<string>(ALLARTICLE);
   const handleTagSelect = (e: SelectChangeEvent<string>) => {
@@ -57,13 +56,15 @@ function Blog({blogs,tags}: Props) {
               このページでは私がどのようなブログを書いているのか検索することができます。
             </Typography>
             {/* タグ選択 */}
-            <FormControl variant="filled" sx={{ m: 1, minWidth: 160 }} >
-              <InputLabel id="select-tag-label">Tag</InputLabel>
-              <Select labelId="select-tag-label" id="select-tag" value={selectTag} label="Tag" onChange={e => handleTagSelect(e)}>
-                <MenuItem value={ALLARTICLE} >{ALLARTICLE}</MenuItem>
-                {tags.map((tag) => ( <MenuItem value={tag.name} key={tag.name}>{tag.name}</MenuItem> ))}
-              </Select>
-            </FormControl>
+            <Box my={2} sx={{ display: 'flex', justifyContent: 'center'}} >
+              <FormControl variant="outlined" sx={{ m: 1, minWidth: 200 }} >
+                <InputLabel id="select-tag-label" color="primary" >Tag</InputLabel>
+                <Select labelId="select-tag-label" id="select-tag" value={selectTag} label="Tag" onChange={e => handleTagSelect(e)}>
+                  <MenuItem value={ALLARTICLE} >{ALLARTICLE}</MenuItem>
+                  {tags.map((tag) => ( <MenuItem value={tag.name} key={tag.name}>{tag.name}</MenuItem> ))}
+                </Select>
+              </FormControl>
+            </Box>
             {/* ブログへのリンク */}
             <Box mt={6}>
               <Grid container spacing={4} >
