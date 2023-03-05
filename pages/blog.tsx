@@ -37,6 +37,8 @@ type Props = {
 function Blog({blogs,tags}: Props) {
   // タグ選択state
   const [selectTag, setSelectTag] = useState<string>("");
+  const ALLARTICLE: string = "全ての記事" 
+  const [selectTag, setSelectTag] = useState<string>(ALLARTICLE);
   const handleTagSelect = (e: SelectChangeEvent<string>) => {
     setSelectTag(e.target.value);
   };
@@ -58,7 +60,7 @@ function Blog({blogs,tags}: Props) {
             <FormControl variant="filled" sx={{ m: 1, minWidth: 160 }} >
               <InputLabel id="select-tag-label">Tag</InputLabel>
               <Select labelId="select-tag-label" id="select-tag" value={selectTag} label="Tag" onChange={e => handleTagSelect(e)}>
-                <MenuItem value="全ての記事">全ての記事</MenuItem>
+                <MenuItem value={ALLARTICLE} >{ALLARTICLE}</MenuItem>
                 {tags.map((tag) => ( <MenuItem value={tag.name} key={tag.name}>{tag.name}</MenuItem> ))}
               </Select>
             </FormControl>
