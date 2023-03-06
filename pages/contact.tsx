@@ -41,7 +41,7 @@ function Contact() {
       },
       body: JSON.stringify(data),
     }).then((res) => {
-      // 送信完了でthanksページに遷移（まだthanksページがないので仮でトップページ）
+      // 送信完了でthanksページに遷移
       if (res.status === 200) {
         router.push("/thanks");
       };
