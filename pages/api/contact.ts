@@ -4,8 +4,7 @@ import nodemailer from "nodemailer"
 export default function sendGmail(req: NextApiRequest, res: NextApiResponse) {
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true, // use TLS
+    port: 587,
     auth: {
       user: process.env.GMAILUSER,
       pass: process.env.GMAILPASSWORD,
