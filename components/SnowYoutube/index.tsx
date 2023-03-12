@@ -6,11 +6,12 @@ const  opts : YouTubeProps [ 'opts' ]  =  {
   width : '640' ,
 } ;
 
-export function SnowYoutube() {
+export function SnowYoutube(props: {youtubeId: string}) {
 
   return (
     <Stack alignItems='center' my={2}>
-      <YouTube videoId="aFjI7OqTL70" opts={opts} />
+      {/* youtubeIDには各動画固有のIDが入る */}
+      <YouTube videoId={props.youtubeId} opts={opts} />
     </Stack>
   );
 }
