@@ -1,3 +1,6 @@
+// Gmailとnodemailerでメールを送るときに使用していたが現在は使用していない（2023/3/12）
+// 参考用に残してある
+
 import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer"
 
