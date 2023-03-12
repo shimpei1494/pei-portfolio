@@ -33,19 +33,18 @@ function Contact() {
 
   // フォーム送信時の処理（バリデーションOKな時に実行される）
   const onSubmit: SubmitHandler<ContactForm> = async (data) => {
-    await fetch("api/contact", {
+    const response = await fetch("api/sendMail", {
       method: "POST",
       headers: {
-        Accept: "application/json, text/plain",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }).then((res) => {
-      // 送信完了でthanksページに遷移
-      if (res.status === 200) {
-        router.push("/thanks");
-      };
     });
+    if (response.status === 200) {
+      router.push("/thanks");
+    } else {
+      alert("正常に送信できませんでした");
+    };
   }
 
   return (
