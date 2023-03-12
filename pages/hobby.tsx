@@ -27,7 +27,14 @@ function Hobby() {
           大学時代の6年間で合計170回ほどスノボに行くほど、スノボにハマっていました。<br/>
           最近では行く回数も減りましたが、昔は動画も作ったりしていました。
         </Typography>
-        <SnowYoutube />
+        <Typography color='secondary' mt={3} align="center">
+          2019〜2020シーズンソロ動画
+        </Typography>
+        <SnowYoutube youtubeId="aFjI7OqTL70" />
+        <Typography color='secondary' mt={3} align="center">
+          大学時代にサークルで作成した動画
+        </Typography>
+        <SnowYoutube youtubeId="p98DfFvn15Q" />
       </Container>
       <Footer />
     </main>
