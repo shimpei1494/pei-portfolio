@@ -9,12 +9,14 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import {useRouter} from "next/router";
 import { PageTitle } from "../components/PageTitle";
 
+// フォームの型
 type ContactForm = {
   name: string
   email: string
   message: string
 };
 
+// バリーデーションルール
 const schema = yup.object({
   name: yup.string().required('必須項目です'),
   email: yup
