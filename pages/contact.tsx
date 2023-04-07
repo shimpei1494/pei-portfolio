@@ -44,7 +44,7 @@ function Contact() {
       return;
     }
     const reCaptchaToken: String = await executeRecaptcha("Contact");
-    console.log(reCaptchaToken);
+    // console.log(reCaptchaToken);
     const serverEndpoint = "api/recaptcha";
 
     const responce_server = await fetch(serverEndpoint, {
