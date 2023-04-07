@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import { createTheme, CssBaseline } from '@mui/material'
 import { ThemeProvider } from '@mui/material'
 import { cyan, indigo } from '@mui/material/colors'
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
 
 const theme = createTheme({
   palette: {
@@ -18,10 +19,12 @@ const theme = createTheme({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT_KEY || ""} language="ja"  >
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </GoogleReCaptchaProvider>
     </>
   )
 }
