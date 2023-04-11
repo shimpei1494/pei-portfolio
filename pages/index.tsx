@@ -79,7 +79,7 @@ export default function Home() {
                   <img src='/images/zenn-logo.png' alt='zennのロゴ' width='50%' />
                 </Container>
                 <Typography>
-                  2023年1月から週1ペースでZennの技術ブログを書き、アウトプットしています。<br/>
+                  2023年からZennの技術ブログを書き、アウトプットしています。<br/>
                   <Link href='https://zenn.dev/peishim' target="_blank" rel="noopener noreferrer">Zennの個人ページ</Link><br/>
                   <br/>
                   このサイトでは、タグ検索機能を提供しており、私の記事を項目別で見つけやすくなっています。<br/>
